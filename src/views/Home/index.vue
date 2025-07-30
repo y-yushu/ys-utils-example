@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import YsScaleScreen from '@/lib/screen/components/ys-scale-screen'
+import YsScaleScreen from '@/lib/screen/components/ys-scale-screen/index2.vue'
 
 export default {
   name: 'HomePage',
