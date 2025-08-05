@@ -15,6 +15,13 @@ const routes = [
     name: 'ScreenExample',
     component: () => import('@/views/screen-example/index')
   },
+  // chat组件测试页面
+  {
+    path: '/chat-example',
+    name: 'ChatExample',
+    component: () => import('@/views/chat-example/index')
+  },
+  // 测试页面
   {
     path: '/test',
     name: 'Test',
