@@ -1,3 +1,6 @@
 [submodule "src/lib/screen"]
 	path = src/lib/screen
 	url = https://github.com/y-yushu/ys-utils-screen-vue2.git
+[submodule "src/lib/chat"]
+	path = src/lib/chat
+	url = http://192.168.78.63/yyshu/hisw-front-utils-vue2.git
