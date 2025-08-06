@@ -17,9 +17,15 @@ const routes = [
   },
   // chat组件测试页面
   {
-    path: '/chat-example',
-    name: 'ChatExample',
-    component: () => import('@/views/chat-example/index')
+    path: '/chat-example-chat-list',
+    name: 'ChatExampleChatList',
+    component: () => import('@/views/chat-example-chat-list/index')
+  },
+  // chat组件测试页面-滚动控件
+  {
+    path: '/chat-example-scrolling',
+    name: 'ChatExampleScrolling',
+    component: () => import('@/views/chat-example-scrolling/index')
   },
   // 测试页面
   {
