@@ -2,6 +2,11 @@
   "name": "ys-utils-example",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    ".",
+    "src/lib/screen",
+    "src/lib/chat"
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",

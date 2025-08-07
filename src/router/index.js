@@ -21,12 +21,6 @@ const routes = [
     name: 'ChatExampleChatList',
     component: () => import('@/views/chat-example-chat-list/index')
   },
-  // chat组件测试页面-滚动控件
-  {
-    path: '/chat-example-scrolling',
-    name: 'ChatExampleScrolling',
-    component: () => import('@/views/chat-example-scrolling/index')
-  },
   // 测试页面
   {
     path: '/test',
