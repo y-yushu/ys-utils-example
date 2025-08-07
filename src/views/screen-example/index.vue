@@ -1,37 +1,48 @@
 <template>
   <div class="page">
-    <YsScaleScreen>
-      <div class="box" @click="handleClick">
-        <div v-for="(item, i) in dots" :key="i" class="dot" :style="{ top: item.y + 'px', left: item.x + 'px' }">{{ i }}</div>
-        <button @click="test">测试</button>
+    <YsScaleScreen :is-edit="isEdit">
+      <!-- 背景 -->
+      <div class="background">
+        <button class="cu-button" @click="openEditMode">{{ this.isEdit ? '关闭' : '开启' }}编辑</button>
+        <button class="cu-button" @click="savePosition">保存位置</button>
       </div>
+      <BoxTemperature ref="boxTemperature" />
+
+      <BoxTemperature2 ref="boxTemperature2" />
     </YsScaleScreen>
   </div>
 </template>
 
 <script>
-import YsScaleScreen from '@/lib/screen/components/ys-scale-screen/index.vue'
+import YsScaleScreen from '@/lib/screen/components/ys-scale-screen'
+import BoxTemperature from './components/box-temperature'
+import BoxTemperature2 from './components/box-temperature2'
 
 export default {
   name: 'HomePage',
   components: {
-    YsScaleScreen
+    YsScaleScreen,
+    BoxTemperature,
+    BoxTemperature2
   },
   data() {
     return {
-      dots: []
+      isEdit: false
     }
   },
   methods: {
-    handleClick(e) {
-      console.log('🚀 ~ handleClick ~ e:', e)
-      this.dots.push({ x: e.offsetX, y: e.offsetY })
+    openEditMode() {
+      this.isEdit = !this.isEdit
+      console.log('🚀 ~ openEditMode ~ 编辑状态:', this.isEdit ? '开启' : '关闭')
     },
 
-    test() {
-      this.$router.push({
-        path: '/test'
-      })
+    savePosition() {
+      const chil1 = this.$refs.boxTemperature
+      const chil2 = this.$refs.boxTemperature2
+      if (!chil1 || !chil2) return console.error('[未获取元素]')
+      chil1.saveConfig()
+      chil2.saveConfig()
+      console.log('🚀 ~ savePosition ~ 保存配置')
     }
   }
 }
@@ -41,25 +52,36 @@ export default {
 .page {
   width: 100%;
   height: 100%;
-  background: greenyellow;
+  background: #dcdfe6;
 }
 
-.box {
-  position: relative;
+.background {
   width: 100%;
   height: 100%;
-  background: orange;
-  border: 1px solid red;
+  background: #f2f6fc;
 }
 
-.dot {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  color: #ffffff;
+.cu-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
   text-align: center;
-  background: blue;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  margin-right: 10px;
+  transition: 0.1s;
+  font-weight: 500;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #409eff;
+  background-image: none;
+  border-color: #409eff;
 }
 </style>

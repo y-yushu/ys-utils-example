@@ -15,7 +15,7 @@ const routes = [
     name: 'ScreenExample',
     component: () => import('@/views/screen-example/index')
   },
-  // chat组件测试页面
+  // chat组件测试页面-列表
   {
     path: '/chat-example-chat-list',
     name: 'ChatExampleChatList',
