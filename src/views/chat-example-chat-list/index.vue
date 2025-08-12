@@ -1,42 +1,32 @@
 <template>
   <div class="page">
-    <AutoSrolling ref="autoSrolling">
+    <div class="chat-box">
+      <ChatListPublic />
+    </div>
+    <!-- <AutoSrolling ref="autoSrolling">
       <ChatListAnjian :list="list" :userImage="userimage">
         <template #ai-before="{ item }">
           <StepList v-if="item.meta && item.meta.steps" :steps="item.meta.steps" />
         </template>
       </ChatListAnjian>
-    </AutoSrolling>
-
-    <div class="footer">
-      <div class="footer_box">
-        <ChatInput v-model="textarea" :is-file-upload="false" />
-        <!-- :disabled="disabled"
-        
-          :show-history-button="false"
-          :show-empty-button="!!messages.length"
-          @haildeEmpty="haildeEmpty"
-          @haildeStop="haildeStop"
-          @haildeSending="haildeSending" -->
-      </div>
-    </div>
+    </AutoSrolling> -->
   </div>
 </template>
 
 <script>
-import AutoSrolling from '@/lib/chat/components/auto-scrolling'
-import ChatListAnjian from '@/lib/chat/example/chat-list-anjian'
-import StepList from '@/lib/chat/components/step-list'
-import ChatInput from '@/lib/chat/components/chat-input'
+import ChatListPublic from '@/lib/chat/example/chat-list-public'
+// import AutoSrolling from '@/lib/chat/components/auto-scrolling'
+// import StepList from '@/lib/chat/components/step-list'
+// import ChatInput from '@/lib/chat/components/chat-input'
 import { mocklist } from '@/lib/chat/components/message-list/mock'
 
 export default {
   name: 'ChatExample',
   components: {
-    AutoSrolling,
-    ChatListAnjian,
-    StepList,
-    ChatInput
+    // AutoSrolling,
+    ChatListPublic
+    // StepList,
+    // ChatInput
   },
   data() {
     return {
@@ -59,36 +49,14 @@ export default {
 <style>
 .page {
   position: relative;
-  height: 100vh;
+  padding: 50px;
+  height: 100%;
+  box-sizing: border-box;
+  background: #c0c4cc;
 }
 
-.cu-input {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  max-width: 1200px;
-  margin-inline: auto;
-  width: 400px;
-  height: 80px;
-  background: yellow;
-}
-
-/* 底部输入区域 */
-.footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.chat-box {
   width: 100%;
-  margin: auto;
-  background: #ffffff;
-}
-
-.footer_box {
-  position: relative;
-  bottom: 0;
-  margin-inline: auto;
-  margin-bottom: 20px;
-  width: 1200px;
-  max-width: 100%;
+  height: 800px;
 }
 </style>
