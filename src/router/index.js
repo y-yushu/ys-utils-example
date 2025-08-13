@@ -21,6 +21,12 @@ const routes = [
     name: 'ChatExampleChatList',
     component: () => import('@/views/chat-example-chat-list/index')
   },
+  // 共有组件
+  {
+    path: '/chat-example-chat-list2',
+    name: 'ChatExampleChatList2',
+    component: () => import('@/views/chat-example-chat-list2/index')
+  },
   // 测试页面
   {
     path: '/test',

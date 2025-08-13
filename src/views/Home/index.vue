@@ -40,7 +40,8 @@ export default {
     return {
       list: [
         { title: '大屏组件示例', path: '/screen-example', desc: '自适应大屏，及可拖拽调整大小组件' },
-        { title: '对话组件示例', path: '/chat-example-chat-list', desc: 'chat对话公共组件' }
+        { title: '对话组件示例', path: '/chat-example-chat-list', desc: 'chat对话公共组件' },
+        { title: '对话组件示例', path: '/chat-example-chat-list2', desc: 'chat对话公共组件2' }
       ]
     }
   },
